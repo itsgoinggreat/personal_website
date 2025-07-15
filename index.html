@@ -18,10 +18,84 @@
             @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors;
         }
         .section-title {
-            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+            @apply text-3xl font-bold text-gray-800 mb-12 text-center;
         }
         .card {
-            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300;
+            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col;
+        }
+        .card-content {
+            @apply flex-grow;
+        }
+        /* Timeline specific styles */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #e5e7eb; /* gray-200 */
+        }
+        .timeline-item {
+            position: relative;
+            width: 100%;
+            padding-left: 2rem; /* Space for mobile view */
+            padding-right: 2rem;
+        }
+        .timeline-dot {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 1rem;
+            transform: translateX(-50%);
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 2px solid #4f46e5; /* indigo-600 */
+        }
+        @media (min-width: 768px) {
+            .timeline-item {
+                width: 50%;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            .timeline-item:nth-child(odd) {
+                align-self: flex-start;
+                padding-right: 4rem;
+                padding-left: 0;
+            }
+            .timeline-item:nth-child(even) {
+                align-self: flex-end;
+                padding-left: 4rem;
+                padding-right: 0;
+            }
+            .timeline-item:nth-child(odd) .timeline-dot {
+                left: auto;
+                right: -0.5rem;
+                transform: translateX(50%);
+            }
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: -0.5rem;
+                transform: translateX(-50%);
+            }
+             .timeline-container::before {
+                left: 50%;
+            }
+        }
+         @media (max-width: 767px) {
+            .timeline-container::before {
+                left: 1rem;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 3rem;
+                padding-right: 0;
+            }
+            .timeline-dot {
+                left: 1rem;
+            }
         }
     </style>
 </head>
@@ -31,11 +105,10 @@
     <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#" class="text-xl font-bold text-gray-900">Rhythm Sharma</a>
-            <div class="hidden md:flex items-center">
+            <div class="hidden md:flex items-center space-x-2">
                 <a href="#about" class="nav-link">About Me</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#hobbies" class="nav-link">Hobbies</a>
-                <a href="#accomplishments" class="nav-link">Accomplishments</a>
+                <a href="#current-research" class="nav-link">Current Research</a>
+                <a href="#timeline" class="nav-link">My Journey</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 
@@ -55,9 +128,8 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
             <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About Me</a>
-            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
-            <a href="#hobbies" class="block py-2 px-4 text-sm hover:bg-gray-200">Hobbies</a>
-            <a href="#accomplishments" class="block py-2 px-4 text-sm hover:bg-gray-200">Accomplishments</a>
+            <a href="#current-research" class="block py-2 px-4 text-sm hover:bg-gray-200">Current Research</a>
+            <a href="#timeline" class="block py-2 px-4 text-sm hover:bg-gray-200">My Journey</a>
             <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-200">Skills</a>
             <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
             <a href="https://www.linkedin.com/in/rhythm-sharma-a836a1233/" target="_blank" class="block py-2 px-4 text-sm hover:bg-gray-200">LinkedIn</a>
@@ -77,32 +149,114 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="py-20">
+        <!-- Current Research Section -->
+        <section id="current-research" class="py-20">
             <div class="container mx-auto px-6">
-                <h2 class="section-title">My Projects</h2>
+                <h2 class="section-title">Current Research</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card">
-                        <i class="fas fa-brain text-3xl text-indigo-500 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">AI for Parkinson's Detection</h3>
-                        <p class="text-gray-600">Employed Support Vector Machines (SVMs) to analyze clinical records and motor assessments. This project leveraged existing studies to significantly enhance the early detection accuracy of Parkinson's disease beyond traditional diagnostic methods.</p>
+                        <div class="card-content">
+                            <i class="fas fa-layer-group text-3xl text-indigo-500 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">Multimodal AI for Precision Medicine</h3>
+                            <p class="text-gray-600">Developing a generative AI platform that integrates diverse data (EHRs, genomics, wearables) to provide personalized treatment plans, automated clinical notes, and predictive health insights for patient-centric care.</p>
+                        </div>
                     </div>
                     <div class="card">
-                        <i class="fas fa-car-battery text-3xl text-indigo-500 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Eco Shell Marathon 2023</h3>
-                        <p class="text-gray-600">Designed an electric race car focused on maximizing energy efficiency. Our team won the prestigious Data Telemetry Award for our innovative approach to data collection and analysis during the competition.</p>
+                        <div class="card-content">
+                            <i class="fas fa-user-md text-3xl text-indigo-500 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">Physician Performance in Detecting AI Errors</h3>
+                            <p class="text-gray-600">A mixed-methods analysis investigating physician performance in detecting AI-generated errors in clinical documentation. This research aims to improve patient safety in AI-assisted healthcare by creating a taxonomy of common AI errors.</p>
+                        </div>
                     </div>
                     <div class="card">
-                        <i class="fas fa-cloud-showers-heavy text-3xl text-indigo-500 mb-4"></i>
-                        <h3 class="text-xl font-semibold mb-2">Stormwater Runoff Simulation</h3>
-                        <p class="text-gray-600">Developed a software-based simulation model using Python, C++, and C# to model urban stormwater runoff. The model is used to inform water management strategies and influence policy decisions in the Western United States.</p>
+                        <div class="card-content">
+                            <i class="fas fa-brain text-3xl text-indigo-500 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-2">Past Project: AI for Parkinson's Detection</h3>
+                            <p class="text-gray-600">Employed Support Vector Machines (SVMs) to analyze clinical records and motor assessments, significantly enhancing the early detection accuracy of Parkinson's disease beyond traditional diagnostic methods.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Timeline Section -->
+        <section id="timeline" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">My Journey</h2>
+                <div class="relative timeline-container flex flex-col items-center">
+                    
+                    <!-- Timeline Item -->
+                    <div class="timeline-item mb-8">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <time class="text-sm font-semibold text-indigo-600 mb-1">June 2023 - Sept 2023</time>
+                            <h3 class="text-lg font-bold text-gray-800">Research Intern</h3>
+                            <p class="text-md text-gray-600 mb-2">Bureau of Reclamation</p>
+                            <p class="text-sm text-gray-500">Developed a stormwater runoff simulation model and conducted data analysis to inform water management strategies in the Western US.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item -->
+                    <div class="timeline-item mb-8">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <time class="text-sm font-semibold text-indigo-600 mb-1">2023</time>
+                            <h3 class="text-lg font-bold text-gray-800">Eco Shell Marathon</h3>
+                            <p class="text-md text-gray-600 mb-2">Data Telemetry Award Winner</p>
+                            <p class="text-sm text-gray-500">Co-designed an energy-efficient electric race car, leading to an award for our innovative data telemetry system.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item -->
+                    <div class="timeline-item mb-8">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <time class="text-sm font-semibold text-indigo-600 mb-1">Jan 2022 - Aug 2023</time>
+                            <h3 class="text-lg font-bold text-gray-800">Zero Waste Intern</h3>
+                            <p class="text-md text-gray-600 mb-2">PLAN: The Post-Landfill Action Network</p>
+                            <p class="text-sm text-gray-500">Developed and implemented campus-wide waste reduction initiatives, conducted waste audits, and authored a comprehensive strategy report.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item -->
+                    <div class="timeline-item mb-8">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <time class="text-sm font-semibold text-indigo-600 mb-1">Jan 2022 - Feb 2023</time>
+                            <h3 class="text-lg font-bold text-gray-800">Research & Automation Engineer</h3>
+                            <p class="text-md text-gray-600 mb-2">Predicine Inc.</p>
+                            <p class="text-sm text-gray-500">Managed NGS data analysis, developed automation scripts for lab machinery, and contributed to research in viral genomics, improving diagnostic accuracy by 15%.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item -->
+                    <div class="timeline-item mb-8">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <time class="text-sm font-semibold text-indigo-600 mb-1">March 2022 - April 2023</time>
+                            <h3 class="text-lg font-bold text-gray-800">Campaign Intern</h3>
+                            <p class="text-md text-gray-600 mb-2">Aisha Wahab for State Senate</p>
+                            <p class="text-sm text-gray-500">Increased campaign visibility and exceeded voter contact goals through canvassing, social media engagement, and organizing rallies.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item -->
+                    <div class="timeline-item mb-8">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <time class="text-sm font-semibold text-indigo-600 mb-1">Jan 2017 - Nov 2019</time>
+                            <h3 class="text-lg font-bold text-gray-800">Tutor</h3>
+                            <p class="text-md text-gray-600 mb-2">Newark Library</p>
+                            <p class="text-sm text-gray-500">Led one-on-one and group tutoring sessions, educating students on effective study strategies and core concepts.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- Hobbies & Interests Section -->
-        <section id="hobbies" class="py-20 bg-white">
+        <section id="hobbies" class="py-20">
             <div class="container mx-auto px-6">
                 <h2 class="section-title">Hobbies & Interests</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -120,33 +274,6 @@
                         <i class="fas fa-cogs text-3xl text-blue-500 mb-4"></i>
                         <h3 class="text-xl font-semibold mb-2">Engineering Club (VP)</h3>
                         <p class="text-gray-600">Leading and collaborating on projects like designing and testing speedboats, enhancing practical engineering skills.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Accomplishments Section -->
-        <section id="accomplishments" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title">Accomplishments</h2>
-                <div class="max-w-4xl mx-auto">
-                    <div class="card mb-6">
-                        <div class="flex items-center">
-                            <i class="fas fa-leaf text-2xl text-green-600 mr-4"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold">Founder/President of RAGE</h3>
-                                <p class="text-gray-600">Founded and led Revolutionaries Advocating for a Greener Ecosystem (RAGE) to implement and motivate environmental changes, including organizing California's first-ever environmental assembly to promote sustainability.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="flex items-center">
-                            <i class="fas fa-trophy text-2xl text-yellow-500 mr-4"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold">Data Telemetry Award</h3>
-                                <p class="text-gray-600">Won at the Eco Shell Marathon 2023 for designing an electric race car focused on maximizing energy efficiency and innovative data telemetry.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
