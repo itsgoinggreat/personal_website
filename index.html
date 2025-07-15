@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Sharma - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* A light gray background */
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-colors;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-gray-800 mb-8 text-center;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-gray-900">Rhythm Sharma</a>
+            <div class="hidden md:flex items-center">
+                <a href="#about" class="nav-link">About Me</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#hobbies" class="nav-link">Hobbies</a>
+                <a href="#accomplishments" class="nav-link">Accomplishments</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                
+                <div class="ml-4 pl-4 border-l border-gray-300 flex items-center space-x-4">
+                    <a href="https://www.linkedin.com/in/rhythm-sharma-a836a1233/" target="_blank" class="text-gray-600 hover:text-indigo-600 transition-colors" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="Resume-Rhythm--Sharma- (Final).pdf" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700 transition-colors">
+                        View Resume <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About Me</a>
+            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
+            <a href="#hobbies" class="block py-2 px-4 text-sm hover:bg-gray-200">Hobbies</a>
+            <a href="#accomplishments" class="block py-2 px-4 text-sm hover:bg-gray-200">Accomplishments</a>
+            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-200">Skills</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
+            <a href="https://www.linkedin.com/in/rhythm-sharma-a836a1233/" target="_blank" class="block py-2 px-4 text-sm hover:bg-gray-200">LinkedIn</a>
+            <a href="Resume-Rhythm--Sharma- (Final).pdf" target="_blank" class="block py-2 px-4 text-sm bg-indigo-600 text-white text-center hover:bg-indigo-700">View Resume</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- About Me Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Rhythm Sharma</h1>
+                <p class="text-xl md:text-2xl text-indigo-600 font-semibold mb-6">Researcher | Biomedical Engineer</p>
+                <p class="max-w-3xl mx-auto text-lg text-gray-600">
+                    I am passionate about leveraging cutting-edge technology at the intersection of health and AI, with a strong focus on research. I am committed to using data analysis and machine learning to tackle healthcare challenges, especially in early disease detection and personalized medicine, aiming to innovate and improve patient outcomes globally.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">My Projects</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card">
+                        <i class="fas fa-brain text-3xl text-indigo-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">AI for Parkinson's Detection</h3>
+                        <p class="text-gray-600">Employed Support Vector Machines (SVMs) to analyze clinical records and motor assessments. This project leveraged existing studies to significantly enhance the early detection accuracy of Parkinson's disease beyond traditional diagnostic methods.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-car-battery text-3xl text-indigo-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Eco Shell Marathon 2023</h3>
+                        <p class="text-gray-600">Designed an electric race car focused on maximizing energy efficiency. Our team won the prestigious Data Telemetry Award for our innovative approach to data collection and analysis during the competition.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-cloud-showers-heavy text-3xl text-indigo-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Stormwater Runoff Simulation</h3>
+                        <p class="text-gray-600">Developed a software-based simulation model using Python, C++, and C# to model urban stormwater runoff. The model is used to inform water management strategies and influence policy decisions in the Western United States.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies & Interests Section -->
+        <section id="hobbies" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Hobbies & Interests</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card text-center">
+                        <i class="fas fa-code text-3xl text-pink-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Girls Who Code</h3>
+                        <p class="text-gray-600">Empowering young girls with essential coding skills, fostering confidence and interest in technology careers.</p>
+                    </div>
+                    <div class="card text-center">
+                        <i class="fas fa-gamepad text-3xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Game Design Club (VP)</h3>
+                        <p class="text-gray-600">Designing and developing innovative games, honing skills in programming, creativity, and collaboration.</p>
+                    </div>
+                    <div class="card text-center">
+                        <i class="fas fa-cogs text-3xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Engineering Club (VP)</h3>
+                        <p class="text-gray-600">Leading and collaborating on projects like designing and testing speedboats, enhancing practical engineering skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accomplishments Section -->
+        <section id="accomplishments" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Accomplishments</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="card mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-leaf text-2xl text-green-600 mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold">Founder/President of RAGE</h3>
+                                <p class="text-gray-600">Founded and led Revolutionaries Advocating for a Greener Ecosystem (RAGE) to implement and motivate environmental changes, including organizing California's first-ever environmental assembly to promote sustainability.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy text-2xl text-yellow-500 mr-4"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold">Data Telemetry Award</h3>
+                                <p class="text-gray-600">Won at the Eco Shell Marathon 2023 for designing an electric race car focused on maximizing energy efficiency and innovative data telemetry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full">Python</span>
+                        <span class="bg-gray-200 text-gray-800 text-sm font-medium px-4 py-2 rounded-full">C/C++/C#</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-4 py-2 rounded-full">JavaScript</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Java</span>
+                        <span class="bg-red-100 text-red-800 text-sm font-medium px-4 py-2 rounded-full">HTML</span>
+                        <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">MATLAB</span>
+                        <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">SQL/NoSQL</span>
+                        <span class="bg-pink-100 text-pink-800 text-sm font-medium px-4 py-2 rounded-full">TensorFlow & PyTorch</span>
+                        <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full">Google Cloud Platform (GCP)</span>
+                         <span class="bg-gray-700 text-white text-sm font-medium px-4 py-2 rounded-full">AWS</span>
+                        <span class="bg-gray-900 text-white text-sm font-medium px-4 py-2 rounded-full">Git</span>
+                        <span class="bg-blue-200 text-blue-800 text-sm font-medium px-4 py-2 rounded-full">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="text-lg text-gray-600 mb-8">I'm always open to discussing new projects, research, or opportunities.</p>
+                <div class="flex justify-center items-center space-x-6">
+                    <a href="mailto:rhythmrsr609@gmail.com" class="text-gray-700 hover:text-indigo-600 transition-colors">
+                        <i class="fas fa-envelope text-3xl"></i>
+                        <span class="ml-2">rhythmrsr609@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rhythm-sharma-a836a1233/" target="_blank" class="text-gray-700 hover:text-indigo-600 transition-colors">
+                        <i class="fab fa-linkedin text-3xl"></i>
+                        <span class="ml-2">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Rhythm Sharma. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Shrink header on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-3');
+            } else {
+                header.classList.add('py-3');
+                header.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
